@@ -1,3 +1,3 @@
 def mavenbuild(giturl){
-	echo giturl;
+	echo giturl
 }
