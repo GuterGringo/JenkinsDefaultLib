@@ -6,7 +6,7 @@ def mavenbuild(giturl){
 
 def getSource(srcurl, stashname){
 	git url:srcurl
-	stash includes: '*', name: stashname
+	stash includes: '**', name: stashname
 }
 
 def publishImage(stashname, dockerrepo){
