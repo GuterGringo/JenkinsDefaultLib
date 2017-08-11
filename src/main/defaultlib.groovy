@@ -9,7 +9,7 @@ def getSource(srcurl, stashname){
 	stash includes: '*', name: stashname
 }
 
-def getSource(stashname, dockerrepo){
+def publishImage(stashname, dockerrepo){
 	unstash stashname
         sh "docker build -t gutergringo/${dockerrepo} ."
         sh "docker push gutergringo/${dockerrepo}"	
