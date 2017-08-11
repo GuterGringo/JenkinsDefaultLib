@@ -9,9 +9,8 @@ def getSource(srcurl, stashname){
 	stash includes: '*', name: stashname
 }
 
-def getSource(stashname, reponame){
-	sh "'${reponame}/bin/mvn' -B clean install"
+def getSource(stashname, dockerrepo){
 	unstash stashname
-        sh "docker build -t gutergringo/${reponame} ."
-        sh "docker push gutergringo/${reponame}"	
+        sh "docker build -t gutergringo/${dockerrepo} ."
+        sh "docker push gutergringo/${dockerrepo}"	
 }
