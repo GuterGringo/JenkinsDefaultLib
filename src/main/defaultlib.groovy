@@ -11,6 +11,6 @@ def getSource(srcurl, stashname){
 
 def publishImage(stashname, dockerrepo, dockerhost){
 	unstash stashname
-        sh "docker -H tcp://${dockerrepo}:2375 build -t gutergringo/${dockerrepo} ."
-        sh "docker -H tcp://${dockerrepo}:2375 push gutergringo/${dockerrepo}"	
+        sh "docker -H tcp://${dockerhost}:2375 build -t gutergringo/${dockerrepo} ."
+        sh "docker -H tcp://${dockerhost}:2375 push gutergringo/${dockerrepo}"	
 }
