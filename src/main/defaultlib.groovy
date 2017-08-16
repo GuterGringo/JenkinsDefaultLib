@@ -17,3 +17,7 @@ def deployContainer(dockerhost){
     	sh "docker-compose -H tcp://${dockerhost}:2375 pull"
     	sh "docker-compose -H tcp://${dockerhost}:2375 up -d --build"
 }
+
+def buildJar(){
+	
+}
